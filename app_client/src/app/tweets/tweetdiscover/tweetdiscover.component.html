@@ -1,0 +1,26 @@
+
+<div class="write">
+  <form name="form" (ngSubmit)="f.form.valid && publish()" #f="ngForm" novalidate>
+     <input placeholder="Write your tweet here" [(ngModel)]="model.content" type="text" class="writetweet" name="tweet" #tweet="ngModel" required maxlength="140">
+     <input placeholder="Tags separated by commas"[(ngModel)]="model.tags" type="text" class="writetags" name="tweet" #tweet="ngModel" required>
+     <button type="submit" id="postbutton">Touite !</button>
+  </form>
+</div>
+
+<div class="feed">
+      <div *ngFor="let tweet of tweets" class="tweet">
+        <img class="profilepic" src="https://pbs.twimg.com/profile_images/987438867040043008/kf4hyXEb_bigger.jpg"/>
+        <a class="tweetauthor"
+           [routerLink]="['/profile',tweet.author]">{{tweet.author}}
+        </a>
+        <div class="friendsymbol" ng-app="app" ng-controller='ctrl'>
+          <div *ngIf="isfriend(tweet.author)"><td class="add-col"><button (click)="addFriend(tweet.author)" class="add-friend-btn">✘👤</button></td></div>
+          <div><td *ngIf="isfriend(tweet.author) == false" class="add-col"><button (click)="deleteFriend(tweet.author)" class="added-friend-btn">✔👤</button></td></div>
+        </div>
+        <div *ngFor="let tag of tweet.tags" class="tags">
+          <div class="tag">{{tag}}</div>
+        </div>
+
+        <div>{{tweet.content}}</div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="feed">
+      <div *ngFor="let tweet of tweets" class="tweet">
+        <img class="profilepic" src="https://pbs.twimg.com/profile_images/987438867040043008/kf4hyXEb_bigger.jpg"/>
+        <a class="tweetauthor"
+           [routerLink]="['/profile',tweet.author]">{{tweet.author}}
+        </a>
+        <div *ngFor="let tag of tweet.tags" class="tags">
+          <div class="tag">{{tag}}</div>
+        </div>
+        <div>{{tweet.content}}</div>
+    </div>
+</div>

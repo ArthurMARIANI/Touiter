@@ -1,0 +1,17 @@
+<nav class="">
+  <a class="menubar navbar-brand" href="/#/">Touiteur </a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="menubar nav-link"
+         [routerLinkActive]="['active']"
+         [routerLink]="['discover']">Discover
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="menubar nav-link"
+         [routerLink]="['friends']">Friends
+      </a>
+    </li>
+  </ul>
+  <a class="navbar-user" (click)="logout()" [routerLink]="['login']">{{userprofile.username}}</a>
+</nav>

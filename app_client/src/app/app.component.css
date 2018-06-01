@@ -1,0 +1,25 @@
+app-menubar{
+  display: block;
+  width: 100%;
+  height: 45px;
+  background-color: #1995E0;
+  margin: 0px;
+}
+
+app-sidebar{
+  top: 0px;
+  width: 300px;
+  background-color: white;
+  height: 550px;
+  margin: 10px;
+  margin-right: 0px;
+  display: inline-block;
+  float: left;
+}
+
+content{
+  display: inline-block;
+  width: 500px;
+  margin: 10px;
+  left:250px !important;
+}

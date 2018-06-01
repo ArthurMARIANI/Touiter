@@ -1,0 +1,7 @@
+<app-menubar *ngIf="is_logged()"></app-menubar>
+<div class="appcontent">
+  <app-sidebar *ngIf="is_logged()"></app-sidebar>
+  <content>
+    <router-outlet></router-outlet>
+  </content>
+</div>
